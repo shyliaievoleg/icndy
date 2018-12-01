@@ -1,0 +1,12 @@
+// assets and script style addons
+@import "libs/owl.carousel.scss";
+
+// global styles
+@import "reset.scss";
+@import "variables.scss";
+@import "mixins.scss";
+@import "scaffolding.scss";
+@import "fonts.scss";
+
+// BEM blocks
+@import "../../blocks/some/some.scss";

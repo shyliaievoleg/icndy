@@ -1,0 +1,56 @@
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+@mixin apricot {
+  font-family: "Ripe Apricot", serif;
+}
+
+@mixin underline {
+  background-image: linear-gradient(to right, rgba(40,40,40,0.5), rgba(40,40,40,0.5));
+  background-size: 1px 1px;
+  background-repeat: repeat-x;
+  /*need background-position*/
+}
+
+@mixin link-underline {
+  background-image: linear-gradient(to right, #d4e8ff, #d4e8ff);
+  background-size: 1px 1px;
+  background-repeat: repeat-x;
+  /*need background-position*/
+}
+
+@mixin dashed-underline {
+  background-image: linear-gradient(to right, rgba(40,40,40,0.5) 50%, rgba(0,0,0,0) 50%);
+  background-size: 5px 1px;
+  background-repeat: repeat-x;
+  /*need background-position*/
+}
+
+@mixin link-dashed-underline {
+  background-image: linear-gradient(to right, #d4e8ff 50%, rgba(0,0,0,0) 50%);
+  background-size: 5px 1px;
+  background-repeat: repeat-x;
+  /*need background-position*/
+}
+
+@mixin white-underline {
+  background-image: linear-gradient(to right, #fff, #fff);
+  background-size: 1px 1px;
+  background-repeat: repeat-x;
+  /*need background-position*/
+}
+
+@mixin white-dashed-underline {
+  background-image: linear-gradient(to right, #fff 50%, rgba(0,0,0,0) 50%);
+  background-size: 5px 1px;
+  background-repeat: repeat-x;
+  /*need background-position*/
+}
+
+@mixin mns-fonted {
+  font-family: "MNS", sans-serif;
+}

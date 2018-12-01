@@ -1,0 +1,7 @@
+build/*
+node_modules/
+*.log
+*.rar
+*.zip
+.idea
+package-lock.json
