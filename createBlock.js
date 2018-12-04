@@ -6,7 +6,7 @@
 const fs = require('fs');
 const mkdirp = require('mkdirp');
 const blockName = process.argv[2];          // получим имя блока
-const defaultExtensions = ['scss', 'html', 'img']; // расширения по умолчанию
+const defaultExtensions = ['scss', 'html', 'img', 'md']; // расширения по умолчанию
 const extensions = uniqueArray(defaultExtensions.concat(process.argv.slice(3)));  // добавим введенные при вызове расширения (если есть)
 
 // Если есть имя блока
@@ -24,7 +24,7 @@ if (blockName) {
 
             // Обходим массив расширений и создаем файлы, если они еще не созданы
             extensions.forEach((extention) => {
-                const filePath = `${dirPath + blockName}.${extention}`; // полный путь к создаваемому файлу
+                let filePath = `${dirPath + blockName}.${extention}`; // полный путь к создаваемому файлу
                 let fileContent = '';                                   // будущий контент файла
                 let fileCreateMsg = '';                                 // будущее сообщение в консоли при создании файла
 
@@ -44,6 +44,12 @@ if (blockName) {
                 // Если это JS
                 else if (extention === 'js') {
                     fileContent = "document.addEventListener('DOMContentLoaded', function () {});";
+                }
+
+                // Если это MD
+                else if (extention === 'md') {
+                    filePath = `${dirPath}readme.${extention}`;
+                    fileContent = `БЭМ-Блок: ${blockName}\n\nОписание: \n\nАвтор: \n\nИсходный проект: \n`;
                 }
 
                 // Если нужна подпапка для картинок
