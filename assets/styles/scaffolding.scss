@@ -1,5 +1,13 @@
 @import "variables.scss";
 @import "mixins.scss";
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
 body {
   font-family: Arial, sans-serif;
   font-size: 18px;
