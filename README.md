@@ -93,3 +93,38 @@ pages/                     # - html-страницы проекта
 ## Комментирование для разработчиков
 
 Для html-файлов можно использовать комментарии вида `<!--DEV Комментарий -->` — такие комментарии не попадут в собранный html.
+
+
+## Удобный миксин для написания медиавыражений
+
+Для scss-файлов существует миксин media(). Подробная инструкция по его использованию [здесь](https://habr.com/post/352686/).
+Если вкратце, в ходе разработки вот этот код 
+
+```bash
+.class{
+    @include media((
+        height: (lg: 800px, md: 600px, sm: 300px)
+    ));
+}
+```
+
+превратится в этот:
+
+```bash
+@media only screen and (max-width: 1024px) {
+    .class{
+        height: 800px;
+   }
+}
+@media only screen and (max-width: 768px) {
+    .class{
+        height: 600px;
+   }
+}
+@media only screen and (max-width: 640px) {
+    .class{
+        height: 300px;
+   }
+}
+```
+

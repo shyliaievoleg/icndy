@@ -1,41 +1,42 @@
 @import "variables.scss";
 @import "mixins.scss";
+
 html {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 *, *::before, *::after {
-  box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  font-size: 18px;
-  color: $text-color;
+	font-family: Arial, sans-serif;
+	font-size: 18px;
+	color: $text-color;
 }
 
 a {
-  padding-bottom: 2px;
-  color: $link-color;
-  text-decoration: none;
+	padding-bottom: 2px;
+	color: $link-color;
+	text-decoration: none;
 }
 
 .wrapper {
-  padding: 0 40px;
-  box-sizing: border-box;
+	padding: 0 40px;
+	box-sizing: border-box;
 }
 
 .container {
-  width: 100%;
-  max-width: 1920px;
-  margin: 0 auto;
-  box-sizing: border-box;
+	width: 100%;
+	max-width: 1920px;
+	margin: 0 auto;
+	box-sizing: border-box;
 }
 
 .visually-hidden {
-  visibility: hidden;
-  height: 0;
-  width: 0;
-  margin: 0;
-  padding: 0;
+	visibility: hidden;
+	height: 0;
+	width: 0;
+	margin: 0;
+	padding: 0;
 }
