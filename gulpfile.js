@@ -1,26 +1,27 @@
 "use strict";
 
-var gulp = require("gulp");
-var sass = require("gulp-sass");
-var sourcemaps = require("gulp-sourcemaps");
-var replace = require('gulp-replace');
-var plumber = require("gulp-plumber");
-var postcss = require("gulp-postcss");
+let gulp = require("gulp");
+let sass = require("gulp-sass");
+let sourcemaps = require("gulp-sourcemaps");
+let replace = require('gulp-replace');
+let plumber = require("gulp-plumber");
+let postcss = require("gulp-postcss");
 
-var autoprefixer = require("autoprefixer");
-var mqpacker = require("css-mqpacker");
-var minify = require("gulp-csso");
-var server = require("browser-sync").create();
-var rename = require("gulp-rename");
-var imagemin = require("gulp-imagemin");
-var svgmin = require("gulp-svgmin");
-var run = require("run-sequence").use(gulp);
-var del = require("del");
-var jsmin = require("gulp-uglify");
-var htmlimport = require('gulp-html-import');
-var concat = require('gulp-concat');
-var copy = require('gulp-copy');
-var htmlbeautify = require('gulp-html-beautify');
+let autoprefixer = require("autoprefixer");
+let babel = require('gulp-babel');
+let mqpacker = require("css-mqpacker");
+let minify = require("gulp-csso");
+let server = require("browser-sync").create();
+let rename = require("gulp-rename");
+let imagemin = require("gulp-imagemin");
+let svgmin = require("gulp-svgmin");
+let run = require("run-sequence").use(gulp);
+let del = require("del");
+let jsmin = require("gulp-uglify");
+let htmlimport = require('gulp-html-import');
+let concat = require('gulp-concat');
+let copy = require('gulp-copy');
+let htmlbeautify = require('gulp-html-beautify');
 
 
 // cleans build-directory
@@ -58,6 +59,9 @@ gulp.task("copybemimages", function () {
 gulp.task('concat', function () {
 	return gulp.src('blocks/**/*.js')
 	.pipe(concat('script.js'))
+	.pipe(babel({
+		presets: ['@babel/env']
+	}))
 	.pipe(gulp.dest('assets/js/'));
 });
 
@@ -114,7 +118,7 @@ gulp.task("style", function () {
 
 // minifies compiled script.js in build (rename to script.min.js)
 gulp.task("jsmin", function () {
-	gulp.src("build/js/script.js")
+	return gulp.src("assets/js/script.js")
 	.pipe(jsmin())
 	.pipe(rename("script.min.js"))
 	.pipe(gulp.dest("build/js"));
