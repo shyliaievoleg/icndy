@@ -29,6 +29,7 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-svgmin": "^2.1.0",
     "gulp-uglify": "^3.0.0",
+    "gulp-wait": "0.0.2",
     "run-sequence": "^2.0.0"
   },
   "scripts": {

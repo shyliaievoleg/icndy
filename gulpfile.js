@@ -22,6 +22,7 @@ let htmlimport = require('gulp-html-import');
 let concat = require('gulp-concat');
 let copy = require('gulp-copy');
 let htmlbeautify = require('gulp-html-beautify');
+let wait = require('gulp-wait');
 
 
 // cleans build-directory
@@ -90,6 +91,7 @@ gulp.task('htmlbeautify', function () {
 // then puts minified css into build/css
 gulp.task("style", function () {
 	gulp.src("assets/styles/style.scss")
+	.pipe(wait(200))
 	.pipe(plumber())
 	.pipe(sourcemaps.init())
 	.pipe(sass())
