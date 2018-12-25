@@ -157,7 +157,7 @@ gulp.task("watch", ["style"], function () {
 		ui: false
 	});
 
-	gulp.watch(["assets/style/**/*.{scss,sass}", "blocks/**/*.{scss,sass}"], ["style"]);
+	gulp.watch(["assets/styles/**/*.{scss,sass}", "blocks/**/*.{scss,sass}"], ["style"]);
 	gulp.watch("./pages/*.html").on("change", function () {
 		del("build/*.html");
 		run("htmlimport");
