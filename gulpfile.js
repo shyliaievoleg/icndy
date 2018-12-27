@@ -15,6 +15,7 @@ let server = require("browser-sync").create();
 let rename = require("gulp-rename");
 let imagemin = require("gulp-imagemin");
 let svgmin = require("gulp-svgmin");
+let svgsprite = require('gulp-svg-sprite');
 let run = require("run-sequence").use(gulp);
 let del = require("del");
 let jsmin = require("gulp-uglify");
@@ -150,6 +151,44 @@ gulp.task("svgimages", function () {
 });
 
 
+// makes view- and symbol- svg-sprite
+let svgConfig = {
+	dest: ".",
+	shape: {
+		dimension: { // Set maximum dimensions
+			maxWidth: 32,
+			maxHeight: 32
+		},
+		spacing: {
+			padding: 0
+		}
+	},
+	mode: {
+		view: { // Makes scss-sprite
+			dest: ".",
+			sprite : "build/img/svgsprite.css.svg",
+			bust: false,
+			prefix: "._svg-icon-%s",
+			render: {
+				scss: {
+					dest: "./assets/styles/svg_sprite.scss",
+				}
+			},
+		},
+		symbol: { // Makes inline html sprite
+			dest: ".",
+			sprite: "build/svg/svgsprite.svg"
+		},
+	}
+};
+gulp.task("svgsprite", function () {
+	return gulp.src(['assets/img/*.svg', 'blocks/**/*.svg'])
+	.pipe(svgsprite(svgConfig))
+	.pipe(replace('build', '..'))
+	.pipe(gulp.dest('.'))
+});
+
+
 // serve styles from build
 gulp.task("watch", ["style"], function () {
 	server.init({
@@ -160,7 +199,7 @@ gulp.task("watch", ["style"], function () {
 	});
 
 	gulp.watch(["assets/styles/**/*.{scss,sass}", "blocks/**/*.{scss,sass}"], ["style"]);
-	gulp.watch("./pages/*.html").on("change", function () {
+	gulp.watch(["./pages/*.html", "./blocks/**/*.html"]).on("change", function () {
 		del("build/*.html");
 		run("htmlimport");
 		server.reload();
@@ -170,12 +209,12 @@ gulp.task("watch", ["style"], function () {
 
 //start
 gulp.task("serve", function () {
-	run("clean", "concat", "htmlimport", "htmlbeautify", "copyAssets", "copybemimages", "jsmin", "style", "watch" /*, "images", "svgimages"*/)
+	run("clean", "concat", "htmlimport", "htmlbeautify", "copyAssets", "copybemimages", "jsmin", "svgsprite", "style", "watch" /*, "images", "svgimages"*/)
 });
 
 
 // build
 gulp.task("build", function () {
-	run("clean", "concat", "htmlimport", "htmlbeautify", "copyAssets", "copybemimages", "jsmin", "style", "images", "svgimages")
+	run("clean", "concat", "htmlimport", "htmlbeautify", "copyAssets", "copybemimages", "jsmin", "svgsprite", "style", "images", "svgimages")
 });
 

@@ -27,13 +27,13 @@
     "gulp-replace": "^1.0.0",
     "gulp-sass": "4.0.2",
     "gulp-sourcemaps": "^2.6.4",
+    "gulp-svg-sprite": "^1.5.0",
     "gulp-svgmin": "^2.1.0",
     "gulp-uglify": "^3.0.0",
     "gulp-wait": "0.0.2",
     "run-sequence": "^2.0.0"
   },
   "scripts": {
-    "test": "editorconfig-cli",
     "build": "gulp build",
     "start": "gulp serve"
   },

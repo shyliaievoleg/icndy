@@ -1,0 +1,44 @@
+%svg-common {
+	background: url("../img/svgsprite.css.svg") no-repeat;
+}
+
+._svg-icon-behance {
+	@extend %svg-common;
+	background-position: 0 0;
+}
+
+._svg-icon-behance-dims {
+	width: 32px;
+	height: 32px;
+}
+
+._svg-icon-periscope {
+	@extend %svg-common;
+	background-position: 100% 0;
+}
+
+._svg-icon-periscope-dims {
+	width: 32px;
+	height: 32px;
+}
+
+._svg-icon-search {
+	@extend %svg-common;
+	background-position: 0 100%;
+}
+
+._svg-icon-search-dims {
+	width: 32px;
+	height: 32px;
+}
+
+._svg-icon-telegram {
+	@extend %svg-common;
+	background-position: 100% 100%;
+}
+
+._svg-icon-telegram-dims {
+	width: 32px;
+	height: 32px;
+}
+
