@@ -12,6 +12,7 @@
     "browser-sync": "2.26.3",
     "css-mqpacker": "^7.0.0",
     "del": "^3.0.0",
+    "eclint": "^2.8.1",
     "gulp": "3.9.1",
     "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1",
