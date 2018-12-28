@@ -34,16 +34,20 @@
     "run-sequence": "^2.0.0"
   },
   "scripts": {
+    "test": "editorconfig-cli",
     "build": "gulp build",
     "start": "gulp serve"
   },
   "editorconfig-cli": [
-    "*.html",
+    "pages/*.html",
     "*.json",
-    "*.js",
-    "js/**/*.js",
-    "img/**/*.svg",
-    "sass/**/*.{sass,scss}"
+    "assets/js/**/*.js",
+    "assets/css/**/*.css",
+    "assets/img/**/*.svg",
+    "assets/styles/**/*.{sass,scss}",
+    "blocks/**/*.{sass,scss}",
+    "blocks/**/*.js",
+    "blocks/**/*.html"
   ],
   "engines": {
     "node": "v10.13.0"
