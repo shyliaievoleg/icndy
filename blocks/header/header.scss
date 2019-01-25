@@ -1,0 +1,47 @@
+// В этом файле должны быть стили для БЭМ-блока header, его элементов, 
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий
+@import "../../assets/styles/variables.scss";
+@import "../../assets/styles/mixins.scss";
+
+.header {
+  width: 100%;
+  text-align: center;
+  grid-area: header;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 150px;
+  padding: 40px 0;
+  z-index: 5;
+
+  .pagewidth {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+}
+
+// Navigation
+.nav__list {
+  display: flex;
+  flex-flow: row wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav__item {
+  margin: 0 10px 10px; 
+}
+.nav__link {
+  color: $white;
+  font-size: 14px;
+  text-transform: uppercase; 
+
+  .nav--footer & {
+    color: $text-color;
+  }
+
+  &:hover {
+    color: $link-color;
+  }
+}

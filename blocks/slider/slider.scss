@@ -1,0 +1,37 @@
+// В этом файле должны быть стили для БЭМ-блока slider, его элементов, 
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий
+@import "../../assets/styles/variables.scss";
+@import "../../assets/styles/mixins.scss";
+
+.slider {
+  width: 100%;
+  max-width: 100vw;
+  height: 100vh;
+  color: $white;
+  grid-area: slider;
+
+  .owl-carousel {
+    height: 100vh;
+  }
+  .owl-carousel__slide {
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .owl-carousel__content {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    height: 100vh;
+    width: 100%;
+
+    h1 {
+      font-size: 50px;
+      font-weight: normal;
+      letter-spacing: 0.5em;
+      margin: 0 0 20px;
+    }
+  }
+}
