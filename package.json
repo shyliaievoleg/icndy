@@ -13,7 +13,7 @@
     "css-mqpacker": "^7.0.0",
     "del": "^3.0.0",
     "eclint": "^2.8.1",
-    "gulp": "3.9.1",
+    "gulp": "^3.9.1",
     "gulp-babel": "^8.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-copy": "^4.0.1",
@@ -54,6 +54,9 @@
     "node": "v10.13.0"
   },
   "dependencies": {
+    "deep-extend": "^0.6.0",
+    "lodash": "^4.17.11",
+    "merge": "^1.2.1",
     "natives": "^1.1.6"
   }
 }

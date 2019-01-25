@@ -22,7 +22,7 @@ html {
 
 body {
 	font-family: Arial, sans-serif;
-	font-size: 18px;
+	font-size: 14px;
 	color: $text-color;
 }
 
@@ -128,4 +128,37 @@ textarea {
 
 .invisible {
 	visibility: hidden;
+}
+.main-grid {
+  width: 100%;
+  display: grid;
+  grid-template-areas: 
+    'header'
+    'slider'
+    'main'
+    'insta'
+    'footer';
+  align-content: center;
+  align-items: center;
+}
+.pagewidth {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.more-info {
+  font-size: 24px;
+}
+.scroll-to-bottom {
+	width: 70px;
+	height: 35px;
+	background: url('../img/icon-arrow-down.png') no-repeat center top;
+	position: fixed;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 50px;
+	z-index: 100;
+	text-indent: -9999em;
+	font-size: 0;
 }
