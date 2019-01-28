@@ -2,7 +2,5 @@ node_modules/
 *.log
 *.rar
 *.zip
-*.jpg
-*.png
 .idea
 package-lock.json
