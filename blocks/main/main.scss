@@ -8,6 +8,7 @@
   box-sizing: border-box;
   background: $white;
   grid-area: main;
+  z-index: 20;
   
   .pagewidth {
     padding: 68px 0;

@@ -309,7 +309,8 @@ template {
 
 html {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
+          box-sizing: border-box;
+  scroll-behavior: smooth; }
 
 *, *::before, *::after {
   -webkit-box-sizing: inherit;
@@ -423,7 +424,7 @@ textarea {
 .main-grid {
   width: 100%;
   display: grid;
-  grid-template-areas: 'header' 'slider' 'main' 'insta' 'footer';
+  grid-template-areas: 'slider' 'main' 'insta' 'footer';
   -ms-flex-line-pack: center;
       align-content: center;
   -webkit-box-align: center;
@@ -436,6 +437,10 @@ textarea {
   margin: 0 auto;
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
+
+.intro {
+  height: 100vh;
+  grid-area: intro; }
 
 .more-info {
   font-size: 24px; }
@@ -450,7 +455,7 @@ textarea {
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
   bottom: 50px;
-  z-index: 50;
+  z-index: 10;
   text-indent: -9999em;
   font-size: 0; }
 
@@ -494,10 +499,9 @@ textarea {
 .header {
   width: 100%;
   text-align: center;
-  grid-area: header;
-  position: absolute;
-  top: 0;
-  left: 0;
+  grid-area: 1 / 1 / 1 / 1;
+  -ms-flex-item-align: start;
+      align-self: start;
   height: 150px;
   padding: 34px 0;
   z-index: 5; }
@@ -552,10 +556,9 @@ textarea {
 
 .slider {
   width: 100%;
-  max-width: 100vw;
-  height: 100vh;
+  max-width: calc(100vw - 17px);
   color: #fff;
-  grid-area: slider; }
+  grid-area: 1/1/1/1; }
   .slider .owl-carousel {
     height: 100vh; }
   .slider .owl-carousel__slide {
@@ -586,7 +589,8 @@ textarea {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background: #fff;
-  grid-area: main; }
+  grid-area: main;
+  z-index: 20; }
   .main .pagewidth {
     padding: 68px 0;
     display: grid;
@@ -640,13 +644,15 @@ textarea {
   text-align: center;
   background: #858587;
   grid-area: insta;
-  position: relative; }
+  position: relative;
+  z-index: 20; }
   .instagram .instagram__images {
     display: grid;
     grid-template: 1fr/repeat(4, 1fr);
     grid-auto-rows: 1fr;
     grid-auto-columns: 1fr; }
     .instagram .instagram__images img {
+      width: 100%;
       max-width: 100%; }
   .instagram .instagram__content {
     position: absolute;

@@ -9,6 +9,7 @@
   background: $gray;
   grid-area: insta;
   position: relative;
+  z-index: 20;
 
   .instagram__images {
     display: grid;
@@ -17,6 +18,7 @@
     grid-auto-columns: 1fr;
 
     img {
+      width: 100%;
       max-width: 100%;
     }
   }

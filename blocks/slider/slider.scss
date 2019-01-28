@@ -5,10 +5,9 @@
 
 .slider {
   width: 100%;
-  max-width: 100vw;
-  height: 100vh;
+  max-width: calc(100vw - 17px);
   color: $white;
-  grid-area: slider;
+  grid-area: 1/1/1/1;
 
   .owl-carousel {
     height: 100vh;
