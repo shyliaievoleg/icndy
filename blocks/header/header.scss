@@ -11,31 +11,62 @@
   top: 0;
   left: 0;
   height: 150px;
-  padding: 40px 0;
+  padding: 34px 0;
   z-index: 5;
+
+  @include media((
+    height: (lg: auto)
+  ));
 
   .pagewidth {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
   }
+
+  .header__logo {
+    @include media((
+      width: (lg: 100%),
+      margin: (lg: 0 0 20px)
+    ));
+  } 
 }
 
 // Navigation
+.nav {
+  display: flex;
+  flex-flow: row wrap;
+
+  @include media((
+    justify-content: (lg: center),
+    width: (lg: 100%)
+  ));
+}
 .nav__list {
   display: flex;
   flex-flow: row wrap;
+  align-items: center;
   list-style: none;
   margin: 0;
   padding: 0;
+
+  @include media((
+    justify-content: (lg: center),
+    width: (lg: 100%)
+  ));
 }
 .nav__item {
-  margin: 0 10px 10px; 
+  margin: 0 50px 10px 0; 
+
+  @include media((
+    margin: (lg: 0 15px 20px)
+  ));
 }
 .nav__link {
   color: $white;
   font-size: 14px;
   text-transform: uppercase; 
+  letter-spacing: .4em;
 
   .nav--footer & {
     color: $text-color;

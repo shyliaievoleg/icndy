@@ -9,13 +9,21 @@
   background: $white;
   grid-area: footer;
   padding: 50px 0;
+  z-index: 100;
 
   .pagewidth {
     display: flex;
     flex-flow: row wrap;
   }
   .footer__copy {
-    margin: 0 20px 0 0;
+    margin: 6px 52px 0 0;
+    letter-spacing: .4em;
+
+    @include media((
+      width: (lg: 100%),
+      text-align: (lg: center),
+      margin: (lg: 0 0 20px),
+    ));
   }
 }
 
@@ -25,6 +33,12 @@
   margin: 0 0 0 auto;
   display: flex;
   flex-flow: row wrap;
+
+  @include media((
+    justify-content: (lg: center),
+    width: (lg: 100%),
+    margin: (lg: 10px 0 0) 
+  ));
 
   .social-icons__item {
     margin: 0 15px 10px;
